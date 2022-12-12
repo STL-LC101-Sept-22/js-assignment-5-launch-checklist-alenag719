@@ -53,17 +53,17 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         fuelStatus.innerText = "Fuel level too low for launch";
         cargoStatus.innerText = "Cargo mass low enough for launch";
         launchStatus.innerText = "Shuttle Not Ready for Launch";
-        launchStatus.style.color = "#be0b0b";
+        launchStatus.style.color = 'rgb(199, 37, 78)';
     } else if (fuelLevel < 10000 && cargoLevel > 10000) {
         fuelStatus.innerText = "Fuel level too low for launch";
         cargoStatus.innerText = "Cargo mass too heavy for launch";
         launchStatus.innerText = "Shuttle Not Ready for Launch";
-        launchStatus.style.color = "#be0b0b";
+        launchStatus.style.color = 'rgb(199, 37, 78)';
     } else if (fuelLevel >= 10000 && cargoLevel > 10000) {
         fuelStatus.innerText = "Fuel level high enough for launch";
         cargoStatus.innerText = "Cargo mass too heavy for launch";
         launchStatus.innerText = "Shuttle Not Ready for Launch";
-        launchStatus.style.color = "#be0b0b";
+        launchStatus.style.color = 'rgb(199, 37, 78)';
     } else {
         fuelStatus.innerHTML = "Fuel level high enough for launch"
         cargoLevel.innerHTML = "Cargo mass low enough for launch"
@@ -86,8 +86,9 @@ async function myFetch() {
 }
 
 function pickPlanet(planets) {
-    let i = Math.floor(Math.random() * planets.length);
-    return planets[i];
+    return Math.floor(Math.random() * planets.length);
+    // let random = Math.floor(Math.random() * planets.length);
+    // return planets[random];
 }
 
 
