@@ -71,7 +71,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     }
 }
 
-
 async function myFetch() {
     let planetsReturned;
 
