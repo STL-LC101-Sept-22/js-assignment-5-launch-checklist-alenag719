@@ -5,13 +5,13 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
     const div = document.getElementById("missionTarget");
     div.innerHTML = `
           <h2>Mission Destination</h2>
-            <ul>
+            <ol>
               <li>Name: ${name}</li>
               <li>Diameter: ${diameter}</li>
               <li>Star: ${star}</li>
               <li>Distance from Earth: ${distance}</li>
   <li>Number of Moons: ${moons}</li>
-            </ul>
+            </ol>
   <img src="${imageUrl}"></img>
           `;
 }
@@ -62,15 +62,15 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         launchStatus.style.color = "rgb(199, 37, 78)"
     } else if (cargoLevel < 10000) {
         cargoStatus.innerHTML = "Cargo mass low enough for launch";
-    } //Launch Checklist when cargo too heavy and fuel too low for launch
-
+    }
+    //Launch Checklist when cargo too heavy and fuel too low for launch
     if (fuelLevel < 10000 && cargoLevel > 10000) {
         fuelStatus.innerHTML = "Fuel level too low for launch";
         cargoStatus.innerHTML = "Cargo mass too heavy for launch";
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = "rgb(199, 37, 78)"
     }
-
+    // Launch Checklist when everything is good to go
     if (fuelLevel > 10000 && cargoLevel < 10000) {
         launchStatus.innerHTML = "Shuttle is Ready for Launch";
         launchStatus.style.color = 'rgb(65, 159, 106)';
